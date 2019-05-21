@@ -32,6 +32,7 @@ deploy:
   file_glob: true
   prerelease: true
   file: "./*/*.pdf"
+  tag_name: "vP-${TRAVIS_BUILD_NUMBER}"
   name: "vP-${TRAVIS_BUILD_NUMBER}"
   on:
     tags: false
