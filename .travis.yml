@@ -32,8 +32,8 @@ deploy:
   file_glob: true
   prerelease: true
   file: "./*/*.pdf"
-  tag_name: "vP-${TRAVIS_BUILD_NUMBER}"
-  name: "vP-${TRAVIS_BUILD_NUMBER}"
+  tag_name: "v${VERSION}.${TRAVIS_BUILD_NUMBER}"
+  name: "v{VERSION}.${TRAVIS_BUILD_NUMBER}"
   on:
     tags: false
     branch: "travis/cd"
