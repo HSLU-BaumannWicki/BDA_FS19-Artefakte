@@ -19,10 +19,6 @@ deploy:
   provider: releases
     on: 
       tags: true
-  provider: prereleases
-    on:
-      tags: false
-      branch: master
   api_key: $GIT_AUTH
   skip_cleanup: true
   file_glob: true
