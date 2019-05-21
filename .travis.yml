@@ -19,24 +19,22 @@ before_deploy:
   - source .env
 
 deploy:
-  provider: releases
-  api_key: $GIT_AUTH
-  skip_cleanup: true
-  file_glob: true
-  prerelease: true
-  file: "./*/*.pdf"
-  tag_name: "v${VERSION}.${TRAVIS_BUILD_NUMBER}"
-  name: "v${VERSION}.${TRAVIS_BUILD_NUMBER}"
-  on:
-    tags: false
-    branch: "travis/cd"
-
-deploy:
-  provider: releases
-  api_key: $GIT_AUTH
-  skip_cleanup: true
-  file_glob: true
-  file:
-    - "./*/*.pdf" 
-  on:
-    tags: true
+  - provider: releases
+    api_key: $GIT_AUTH
+    skip_cleanup: true
+    file_glob: true
+    prerelease: true
+    file: "./*/*.pdf"
+    tag_name: "v${VERSION}.${TRAVIS_BUILD_NUMBER}"
+    name: "v${VERSION}.${TRAVIS_BUILD_NUMBER}"
+    on:
+      tags: false
+      branch: "travis/cd"
+  - provider: releases
+    api_key: $GIT_AUTH
+    skip_cleanup: true
+    file_glob: true
+    file:
+      - "./*/*.pdf" 
+    on:
+      tags: true
