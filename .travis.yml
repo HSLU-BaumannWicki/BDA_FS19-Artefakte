@@ -31,6 +31,7 @@ deploy:
   skip_cleanup: true
   file_glob: true
   file: "./*/*.pdf"
+  name: "${TRAVIS_BUILD_NUMBER}-${TRAVIS_BRANCH}-${TRAVIS_BUILD_ID}"
   on:
     tags: false
     branch: "travis/cd"
