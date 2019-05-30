@@ -40,6 +40,10 @@
 % Clickable Links to Websites and chapters
 \usepackage{hyperref}
 
+% Code Highlighting
+\usepackage{listings}
+\lstset{language=XML}
+
 %%% Not clearpage before chapter
 \usepackage{etoolbox}
 \makeatletter
@@ -162,6 +166,57 @@ Danach wurde mit einem eigenen Tag das Erkennen von einem deplazierten Exemplar 
 	\caption{Positionen RFID Tag}
 	\label{fig:PositionenRFIDTag}
 \end{figure}
+
+\section{Auslesegeschwindigkeit}
+Der Behälter befand sich etwa drei Sekunden im Lesebereich beider Antennen. Im Test wurden im Maximum 27 ExemplarIDs erfolgreich ausgelesen. Dies ergibt eine Leserate von $9 \frac{ExemplarIDs}{Sekunde}$.
+
+\clearpage
+
+\begin{lstlisting}
+<record>
+<date>2019-05-28T06:35:20</date>
+<millis>1559050520265</millis>
+<sequence>1638</sequence>
+<logger>RFIDReferenzimplementation</logger>
+<level>INFO</level>
+<class>
+	ch.bda.baumannwicki.misplacedtagidentifier.log.LogPersistorImpl
+</class>
+<method>printTagsFound</method>
+<thread>9</thread>
+<message>
+	LibraryCopies found: [
+		ArticleID: ILUM02142955, BoxID: LB00040204,
+		ArticleID: ILUM02142950, BoxID: LB00040204,
+		ArticleID: ILUM02142951, BoxID: LB00040204,
+		ArticleID: ILUM02142992, BoxID: LB00040204,
+		ArticleID: ILUM02142971, BoxID: LB00040204,
+		ArticleID: ILUM02146779, BoxID: LB00040204,
+		ArticleID: ILUM02142956, BoxID: LB00040204,
+		ArticleID: ILUM02142957, BoxID: LB00040204,
+		ArticleID: ILUM02146786, BoxID: LB00040204,
+		ArticleID: ILUM02146080, BoxID: LB00040204,
+		ArticleID: ILUM02146081, BoxID: LB00040204,
+		ArticleID: ILUM02146082, BoxID: LB00040204,
+		ArticleID: ILUM02146927, BoxID: LB00040204,
+		ArticleID: ILUM02146765, BoxID: LB00040204,
+		ArticleID: ILUM02146941, BoxID: LB00040204,
+		ArticleID: ILUM02146942, BoxID: LB00040204,
+		ArticleID: ILUM02142949, BoxID: LB00040204,
+		ArticleID: ILUM02146943, BoxID: LB00040204,
+		ArticleID: ILUM02146767, BoxID: LB00040204,
+		ArticleID: ILUM02142947, BoxID: LB00040204,
+		ArticleID: ILUM02146704, BoxID: LB00040204,
+		ArticleID: ILUM02146309, BoxID: LB00040204,
+		ArticleID: ILUM02146770, BoxID: LB00040204,
+		ArticleID: ILUM02146771, BoxID: LB00040204,
+		ArticleID: ILUM02146772, BoxID: LB00040204,
+		ArticleID: ILUM02142990, BoxID: LB00040204,
+		ArticleID: ILUM02261706, BoxID: LB00040204
+	]
+</message>
+</record>
+\end{lstlisting}
 
 \section{Fazit}
 Es konnte bewiesen werden, dass mit den Einschränkungen die in den Versuchen eruiert wurden (im Bezug auf Reichweite, Ausrichtung zwischen Tag und Antenne, und Distanz zwischen Tags), eine Identifikation der Behälter und deplatzierten Exemplaren möglich ist. Dennoch sind noch Optimierungen in der Applikation möglich und die Anschaffung der Geräte von Feig zur Erreichung einer vollen Abdeckung der Behälter nötig.
