@@ -1,0 +1,73 @@
+\documentclass[parskip=full, a4paper]{scrreprt}
+
+%%% PACKAGES %%%
+
+% add unicode support and use german as language
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+% Use Helvetica as font
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+% Better tables
+\usepackage{tabularx}
+
+% Better enumerisation env
+\usepackage{enumitem}
+
+% Use graphics
+\usepackage{graphicx}
+
+% Have subfigures and captions
+\usepackage{subcaption}
+
+% Be able to include PDFs in the file
+\usepackage{pdfpages}
+
+% Have custom abstract heading
+\usepackage{abstract}
+
+% Better equation environment
+\usepackage{amsmath}
+
+% Symbols for most SI units
+\usepackage{siunitx}
+
+\usepackage{csquotes}
+
+% Clickable Links to Websites and chapters
+\usepackage{hyperref}
+
+%%% Not clearpage before chapter
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\scr@startchapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+%%% Fallback DocumentVersion if Builded local
+\providecommand{\docversion}{0.0-localBuild}
+
+%%% DOCUMENT %%%
+
+\begin{document}
+\begin{titlepage}
+\vspace*{2.5cm}
+\noindent
+\Huge{\textbf{Bericht des Tests der Referenzimplementation}} \\
+\noindent
+\Large{28.05.2019, Büron}\\
+\vfill
+\noindent
+\large{Author: Pascal Baumann}\\
+\noindent
+\large{Datum: \today}\\
+\noindent
+\large{Version: \docversion}\\
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\end{document}
