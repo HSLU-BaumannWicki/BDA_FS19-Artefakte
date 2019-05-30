@@ -1,4 +1,4 @@
-\documentclass[parskip=full, a4paper]{scrreprt}
+\documentclass[parskip=full, a4paper]{scrartcl}
 
 %%% PACKAGES %%%
 
@@ -64,7 +64,7 @@
 \Large{28.05.2019, Büron}\\
 \vfill
 \noindent
-\large{Author: Pascal Baumann}\\
+\large{Autor: Pascal Baumann}\\
 \noindent
 \large{Datum: \today}\\
 \noindent
@@ -73,5 +73,97 @@
 
 \tableofcontents
 \clearpage
+
+\section{Einleitung}
+Die im Sprint 07 entwickelte Referenzimplementation wurde am 28.05.2019 in der Speicherbibliothek in Büron getestet. Dafür wurden drei Laptops, zwei Antennen, ein Lesegerät und eigens dafür entwickelte Halterung eingeladen, und nach Luzern mitgenommen. Vor Ort entdeckte das Team, dass der Test in der Produktivumgebung unter Vollast laufen wird, und nicht auf einem separaten Förderband. Dies führte zu einer gewissen Anspannung beim Aufbau, da das Team auf keinen Fall die Mitarbeiteten belästigen und beeinträchtigen oder die Maschinerie beschädigen wollte (vergleiche Abbildung \ref{fig:AufbauSensorik}).
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[keepaspectratio,width=\textwidth]{img/Testaufbau.jpg}
+	\caption{Teammitglied Baumann beim Aufbau und Ausweichen von sensitiver Sensorik}
+	\label{fig:AufbauSensorik}
+\end{figure}
+
+\section{Inbetriebnahme}
+Sobald die Antennen plaziert waren, konnte mit der Inbetriebnahme fortgefahren werden. Schnell wurde klar, dass die Software geändert werden musste, da viele Tags nicht ausgelesen werden konnten und eine Exception warfen, welche nicht abgefangen wurde. Das Team entschied sich diese Exception zwar im Log festzuhalten, aber nicht weiter zu beachten. Danach konnte ein erstes Erfolgserlebnis erreicht werden, indem verifiziert werden konnte, dass die Ermittlung der Behälter über eine Mehrzahl der ExemplarIDs funktionierte.
+
+\section{Test Multiple Tags}
+Danach wurde getestet, wieviel Tags im Durchschnitt gelesen werden konnte. Die zwei Häufigsten Layouts welche im Datensatz anzutreffen waren, waren das Layout L04 und L08 (siehe Abbildung \ref{fig:Layouts}), dennoch konnten anfangs nur durchschnittlich etwa 5 Tags pro Behälter gelesen werden. Das Team identifizierte dafür die Gründe, dass die Bücher zu dicht gestapelt waren und die RFID Tags immer etwa auf gleicher Höhe angebracht waren, plus die Reichweite der Antennen die nicht die ganzen Behälter abdecken konnten.
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}{0.48\linewidth}
+		\includegraphics[keepaspectratio,width=\linewidth]{img/Layout04.png}
+		\caption{Layout L04}
+	\end{subfigure}
+	\begin{subfigure}{0.48\linewidth}
+		\includegraphics[keepaspectratio,width=\linewidth]{img/Layout08.png}
+		\caption{Layout L08}
+	\end{subfigure}
+	\caption{Die zwei häufigsten Layouts}
+	\label{fig:Layouts}
+\end{figure}
+
+\section{Test Vollbetrieb}
+Der nächste Test welcher durchgeführt wurde war, wie gut die Applikation mit der vollen Geschwindigkeit des Förderbandes zurecht kommt. Es konnte in diesem Test einerseit ermittelt werden, dass bei der Eckpartie nie zwei Behälter nebeneinander zu liegen kommen, da der nächste Behälter in einer Warteposition vorher bleibt, bis der vordere Behälter auf der Waage zu liegen kommt (siehe Abbildung \ref{fig:PlanEckpartie}). Die beiden Behälter überschneiden sich jedoch wenn sie aneinander vorbeifahren (siehe Abbildung \ref{fig:AblaufEckpartie}). Weiter musste aufgrund der Geschwindigkeit des Auslesen der Behälter-Exemplar-Rückbeziehung die .csv-Datei in den Arbeitsspeicher geladen werden, da ansonsten die Berichterstattung viel zu langsam war.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[keepaspectratio,width=0.6\linewidth]{img/PlanEckpartie.png}
+	\caption{Lageplan mit Fokus auf die Eckpartie in der der Test durchgeführt wurde}
+	\label{fig:PlanEckpartie}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}{0.3\linewidth}
+		\includegraphics[keepaspectratio,width=\linewidth]{AblaufEckpartie01.png}
+	\end{subfigure}
+	\begin{subfigure}{0.3\linewidth}
+		\includegraphics[keepaspectratio,width=\linewidth]{AblaufEckpartie02.png}
+	\end{subfigure}
+	\begin{subfigure}{0.3\linewidth}
+		\includegraphics[keepaspectratio,width=\linewidth]{AblaufEckpartie03.png}
+	\end{subfigure}
+	\caption{Ablauf der Bewegung in der Eckpartie bei Vollbetrieb}
+	\label{fig:AblaufEckpartie}
+\end{figure}
+
+\section{Test Antennenposition}
+Weiter wurde mit verschiedenen Antennenpositionen experimentiert, unter anderem bei der Position der Waage und in der Eckpartie (siehe Abbildung \ref{fig:PlanEckpartie}). Es konnte ermittelt werden, das das Auslesen bei der Eckpartie besser funktioniert, da sich der Behälter länger im Lesebereich der Antenne befindet, als es dies bei der Waage der Fall ist. Weiter konnte eruiert werden, dass die Antenne in Horizontaler Ausrichtung mehr Tags auslesen kann als in Vertikaler Ausrichtung (siehe Abbildung \ref{fig:AusrichtungAntenne})
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[keepaspectratio,width=0.6\linewidth]{img/AusrichtungAntenne.png}
+	\caption{Ausrichtungsarten der Antenne in Referenz zur Halterung}
+	\label{fig:AusrichtungAntenne}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[keepaspectratio,width=0.6\linewidth]{img/FinaleAntennenPosition.png}
+	\caption{Position der Antennen bis zum Schluss der Tests}
+	\label{fig:FinalePositionAntennen}
+\end{figure}
+
+\section{Test Deplatziertes Exemplar}
+Danach wurde mit einem eigenen Tag das Erkennen von einem deplazierten Exemplar getestet. Dies wurde von der Applikation erkannt, wenn es genug weit von anderen Exemplaren entfernt war, und genug nahe bei den Antennen. Auf Abbildung \ref{fig:PositionenRFIDTag} wird dargestellt wann der Test erfolgreich war und wann nicht.
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}{0.48\linewidth}
+		\includegraphics[keepaspectratio,width=\linewidth]{img/RFIDPositionErfolgreich.jpg}
+		\caption{Position des RFID Tags bei erfolgreichen Erkennungen}
+	\end{subfigure}
+	\begin{subfigure}{0.48\linewidth}
+		\includegraphics[keepaspectratio,width=\linewidth]{img/RFIDPositionNichtErfolgreich.jpg}
+		\caption{Position des RFID Tags bei nicht erfolgreichen Erkennungen}
+	\end{subfigure}
+	\caption{Positionen RFID Tag}
+	\label{fig:PositionenRFIDTag}
+\end{figure}
+
+\section{Fazit}
+Es konnte bewiesen werden, dass mit den Einschränkungen die in den Versuchen eruiert wurden (im Bezug auf Reichweite, Ausrichtung zwischen Tag und Antenne, und Distanz zwischen Tags), eine Identifikation der Behälter und deplatzierten Exemplaren möglich ist. Dennoch sind noch Optimierungen in der Applikation möglich und die Anschaffung der Geräte von Feig zur Erreichung einer vollen Abdeckung der Behälter nötig.
 
 \end{document}
