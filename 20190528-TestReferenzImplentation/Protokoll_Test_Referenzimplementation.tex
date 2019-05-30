@@ -46,8 +46,12 @@
 \patchcmd{\scr@startchapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
 \makeatother
 
-%%% Fallback DocumentVersion if Builded local
+%%% FALLBACK DocumentVersion if local build
 \providecommand{\docversion}{0.0-localBuild}
+
+%%% PATH DEFINITIONS %%%
+% Define the path were images are found
+\graphicspath{{./img/}{./pdf/}}
 
 %%% DOCUMENT %%%
 
