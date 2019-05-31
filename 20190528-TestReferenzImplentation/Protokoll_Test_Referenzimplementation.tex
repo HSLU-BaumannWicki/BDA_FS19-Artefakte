@@ -79,7 +79,7 @@
 \clearpage
 
 \section{Einleitung}
-Die im Sprint 07 entwickelte Referenzimplementation wurde am 28.05.2019 in der Speicherbibliothek in Büron getestet. Dafür wurden drei Laptops, zwei Antennen, ein Lesegerät und eigens dafür entwickelte Halterung eingeladen, und nach Luzern mitgenommen. Vor Ort entdeckte das Team, dass der Test in der Produktivumgebung unter Vollast laufen wird, und nicht auf einem separaten Förderband. Dies führte zu einer gewissen Anspannung beim Aufbau, da das Team auf keinen Fall die Mitarbeiteten belästigen und beeinträchtigen oder die Maschinerie beschädigen wollte (vergleiche Abbildung \ref{fig:AufbauSensorik}).
+Die im Sprint 07 entwickelte Referenzimplementation wurde am 28.05.2019 in der Speicherbibliothek in Büron getestet. Dafür wurden drei Laptops, zwei Antennen, ein Lesegerät und eigens dafür entwickelte Halterung eingeladen und nach Büron mitgenommen. Vor Ort entdeckte das Team, dass der Test in der Produktivumgebung unter Vollast laufen wird, und nicht auf einem separaten Förderband. Dies führte zu einer gewissen Anspannung beim Aufbau, da das Team auf keinen Fall die Mitarbeiteten belästigen und beeinträchtigen oder die Maschinerie beschädigen wollte (vergleiche Abbildung \ref{fig:AufbauSensorik}).
 
 \begin{figure}[htb]
 	\centering
@@ -92,7 +92,7 @@ Die im Sprint 07 entwickelte Referenzimplementation wurde am 28.05.2019 in der S
 Sobald die Antennen plaziert waren, konnte mit der Inbetriebnahme fortgefahren werden. Schnell wurde klar, dass die Software geändert werden musste, da viele Tags nicht ausgelesen werden konnten und eine Exception warfen, welche nicht abgefangen wurde. Das Team entschied sich diese Exception zwar im Log festzuhalten, aber nicht weiter zu beachten. Danach konnte ein erstes Erfolgserlebnis erreicht werden, indem verifiziert werden konnte, dass die Ermittlung der Behälter über eine Mehrzahl der ExemplarIDs funktionierte.
 
 \section{Test Multiple Tags}
-Danach wurde getestet, wieviel Tags im Durchschnitt gelesen werden konnte. Die zwei Häufigsten Layouts welche im Datensatz anzutreffen waren, waren das Layout L04 und L08 (siehe Abbildung \ref{fig:Layouts}), dennoch konnten anfangs nur durchschnittlich etwa 5 Tags pro Behälter gelesen werden. Das Team identifizierte dafür die Gründe, dass die Bücher zu dicht gestapelt waren und die RFID Tags immer etwa auf gleicher Höhe angebracht waren, plus die Reichweite der Antennen die nicht die ganzen Behälter abdecken konnten.
+Danach wurde getestet, wieviel Tags im Durchschnitt gelesen werden konnte. Die zwei häufigsten Layouts welche im Datensatz anzutreffen waren, waren das Layout L04 und L08 (siehe Abbildung \ref{fig:Layouts}), dennoch konnten anfangs nur durchschnittlich etwa 5 Tags pro Behälter gelesen werden. Das Team identifizierte dafür die Gründe, dass die Bücher zu dicht gestapelt waren und die RFID Tags immer etwa auf gleicher Höhe angebracht waren, plus die Reichweite der Antennen die nicht die ganzen Behälter abdecken konnten.
 
 \begin{figure}[htb]
 	\centering
@@ -134,7 +134,7 @@ Der nächste Test welcher durchgeführt wurde war, wie gut die Applikation mit d
 \end{figure}
 
 \section{Test Antennenposition}
-Weiter wurde mit verschiedenen Antennenpositionen experimentiert, unter anderem bei der Position der Waage und in der Eckpartie (siehe Abbildung \ref{fig:PlanEckpartie}). Es konnte ermittelt werden, das das Auslesen bei der Eckpartie besser funktioniert, da sich der Behälter länger im Lesebereich der Antenne befindet, als es dies bei der Waage der Fall ist. Weiter konnte eruiert werden, dass die Antenne in Horizontaler Ausrichtung mehr Tags auslesen kann als in Vertikaler Ausrichtung (siehe Abbildung \ref{fig:AusrichtungAntenne})
+Weiter wurde mit verschiedenen Antennenpositionen experimentiert, unter anderem bei der Position der Waage und in der Eckpartie (siehe Abbildung \ref{fig:PlanEckpartie}). Es konnte ermittelt werden, dass das Auslesen bei der Eckpartie besser funktioniert als die bei der Waage der Fall ist, da sich der Behälter länger im Lesebereich der Antenne befindet. Weiter konnte eruiert werden, dass die Antenne in horizontaler Ausrichtung mehr Tags auslesen kann, als in vertikaler Ausrichtung (siehe Abbildung \ref{fig:AusrichtungAntenne}).
 
 \begin{figure}[htb]
 	\centering
@@ -151,7 +151,7 @@ Weiter wurde mit verschiedenen Antennenpositionen experimentiert, unter anderem 
 \end{figure}
 
 \section{Test Deplatziertes Exemplar}
-Danach wurde mit einem eigenen Tag das Erkennen von einem deplazierten Exemplar getestet. Dies wurde von der Applikation erkannt, wenn es genug weit von anderen Exemplaren entfernt war, und genug nahe bei den Antennen. Auf Abbildung \ref{fig:PositionenRFIDTag} wird dargestellt wann der Test erfolgreich war und wann nicht.
+Anschliessend wurde mit einem eigens mitgebrachten Tag, dass erkennen eines deplazierten Exemplars getestet. Dies wurde von der Applikation erkannt, sofern dieser Tag die Bedingungen erfüllt um Ihn auslesen zu können. Dies beinhaltet, dass eine gewise Distanz zu Anderen Tags eingehalten wird, sowie die Ausrichtung des Tags zur Antenne den kritischen Wert nicht übersteigt. Auf der Abbildung \ref{fig:PositionenRFIDTag} wird dargestellt, bei welchen Szenarien der Test erfolgreich war und bei welchen nicht.
 
 \begin{figure}[htb]
 	\centering
@@ -168,7 +168,7 @@ Danach wurde mit einem eigenen Tag das Erkennen von einem deplazierten Exemplar 
 \end{figure}
 
 \section{Auslesegeschwindigkeit}
-Der Behälter befand sich etwa drei Sekunden im Lesebereich beider Antennen. Im Test wurden im Maximum 27 ExemplarIDs erfolgreich ausgelesen. Dies ergibt eine Leserate von $9 \frac{ExemplarIDs}{Sekunde}$.
+Der Behälter befand sich etwa drei Sekunden im Lesebereich beider Antennen. Im Test wurden im Maximum 27 ExemplarIDs erfolgreich ausgelesen. Dies ergibt eine maximal erreichte Leserate von $9 \frac{ExemplarIDs}{Sekunde}$.
 
 \clearpage
 
@@ -219,6 +219,6 @@ Der Behälter befand sich etwa drei Sekunden im Lesebereich beider Antennen. Im 
 \end{lstlisting}
 
 \section{Fazit}
-Es konnte bewiesen werden, dass mit den Einschränkungen die in den Versuchen eruiert wurden (im Bezug auf Reichweite, Ausrichtung zwischen Tag und Antenne, und Distanz zwischen Tags), eine Identifikation der Behälter und deplatzierten Exemplaren möglich ist. Dennoch sind noch Optimierungen in der Applikation möglich und die Anschaffung der Geräte von Feig zur Erreichung einer vollen Abdeckung der Behälter nötig.
+Die in den Versuchen emittelten Anforderungen zum erfolgreichen Lesen eines Tags, im Bezug auf die Reichweite, Ausrichtung zwischen Tag und Antenne und distanz zwischen den Tags, konnten mit diesem Test bestätigt werden. Somit ist eine Identifikation der Behälter, wie auch der deplazierten Exemplaren, unter Einhaltung dieser Anforderungen, möglich. Dennoch sind Optimierungen in der Applikation möglich, sowie die Anschaffung der Geräte von Feig, zur Erreichung einer vollen Abdeckung der Behälter, nötig.
 
 \end{document}
