@@ -92,7 +92,7 @@ Die im Sprint 07 entwickelte Referenzimplementation wurde am 28.05.2019 in der S
 Sobald die Antennen platziert waren, konnte mit der Inbetriebnahme fortgefahren werden. Schnell wurde klar, dass die Software geändert werden musste, da viele Tags nicht ausgelesen werden konnten und eine Exception warfen, welche nicht abgefangen wurde. Das Team entschied sich diese Exception zwar im Log festzuhalten, aber nicht weiter zu beachten. Danach konnte ein erstes Erfolgserlebnis erreicht werden, indem verifiziert werden konnte, dass die Ermittlung der Behälter über eine Mehrzahl der ExemplarIDs funktionierte.
 
 \section{Test Multiple Tags}
-Danach wurde getestet, wieviel Tags im Durchschnitt gelesen werden konnte. Die zwei häufigsten Layouts, welche im Datensatz anzutreffen waren, waren das Layout L04 und L08 (siehe Abbildung \ref{fig:Layouts}). Trotz den optimalen Bedingungen, welche die Layouts liefern, konnten zu Beginn nur circa fünf Tags pro Behälter gelesen werden. Das Team identifizierte dafür die Gründe, dass die Bücher zu dicht gestapelt waren, sowie dass die RFID Tags immer auf gleicher Höhe angebracht waren. Weiter konnte eruiert werden, dass die Antennen nicht den gesamten Behälter abdecken konnten. Die Nichtabdeckung des gesamten Behälters konnte ermittelt werden, indem ein Tag am anderen Ende, unter guten Bedingungen, platziert wurde, dieser Tag jedoch nicht mehr lesbar war.
+Danach wurde getestet, wie viel Tags im Durchschnitt gelesen werden konnte. Die zwei häufigsten Layouts, welche im Datensatz anzutreffen waren, waren das Layout L04 und L08 (siehe Abbildung \ref{fig:Layouts}). Trotz den optimalen Bedingungen, welche die Layouts liefern, konnten zu Beginn nur circa fünf Tags pro Behälter gelesen werden. Das Team identifizierte dafür die Gründe, dass die Bücher zu dicht gestapelt waren, sowie dass die RFID Tags immer auf gleicher Höhe angebracht waren. Weiter konnte eruiert werden, dass die Antennen nicht den gesamten Behälter abdecken konnten. Die Nichtabdeckung des gesamten Behälters konnte ermittelt werden, indem ein Tag am anderen Ende, unter guten Bedingungen, platziert wurde, dieser Tag jedoch nicht mehr lesbar war.
 
 \begin{figure}[htb]
 	\centering
@@ -109,7 +109,7 @@ Danach wurde getestet, wieviel Tags im Durchschnitt gelesen werden konnte. Die z
 \end{figure}
 
 \section{Test Vollbetrieb}
-Der nächster Test galt der Überprüfung, wie gut die Applikation mit der vollen Geschwindigkeit des Förderbandes zurechtkommt. Es konnte in diesem Test einerseits ermittelt werden, dass bei der Eckpartie nie zwei Behälter nebeneinander zu liegen kommen, da der nächste Behälter in einer Warteposition vorher bleibt, bis der direkt vorangehende die Eckpartie am Verlassen ist (siehe Abbildung \ref{fig:PlanEckpartie}). Die beiden Behälter überschneiden sich jedoch, wenn sie aneinander vorbeifahren (siehe Abbildung \ref{fig:AblaufEckpartie}). Weiter musste aufgrund der Geschwindigkeit das Auslesen der Behälter-Exemplar-Rückbeziehung die .csv-Datei in den Arbeitsspeicher geladen werden, da ansonsten die Berichterstattung viel zu langsam war. Selbst nach dieser Massnahme gab es noch Verzögerung von wenigen Sekunden, sofern viele Identifiziert und deren BuchID gelesen werden konnte, da die gesamte Datei für jede BuchID durchsucht werden musste.
+Der nächste Test galt der Überprüfung, wie gut die Applikation mit der vollen Geschwindigkeit des Förderbandes zurechtkommt. Es konnte in diesem Test einerseits ermittelt werden, dass bei der Eckpartie nie zwei Behälter nebeneinander zu liegen kommen, da der nächste Behälter in einer Warteposition bleibt, bis der direkt vorangehende die Eckpartie am Verlassen ist (siehe Abbildung \ref{fig:PlanEckpartie}). Die beiden Behälter überschneiden sich jedoch, wenn sie aneinander vorbeifahren (siehe Abbildung \ref{fig:AblaufEckpartie}). Weiter musste aufgrund der Geschwindigkeit das Auslesen der Behälter-Exemplar-Rückbeziehung die .csv-Datei in den Arbeitsspeicher geladen werden, da ansonsten die Berichterstattung viel zu langsam war. Selbst nach dieser Massnahme gab es noch Verzögerung von wenigen Sekunden, sofern viele Identifiziert und deren BuchID gelesen werden konnte, da die gesamte Datei für jede BuchID durchsucht werden musste.
 
 \begin{figure}[htb]
 	\centering
@@ -134,7 +134,7 @@ Der nächster Test galt der Überprüfung, wie gut die Applikation mit der volle
 \end{figure}
 
 \section{Test Antennenposition}
-Weiter wurde mit verschiedenen Antennenpositionen experimentiert, unter anderem bei der Position der Waage und in der Eckpartie (siehe Abbildung \ref{fig:PlanEckpartie}). Es konnte ermittelt werden, dass das Auslesen bei der Eckpartie besser funktioniert als dies bei der Waage der Fall ist, da sich der Behälter länger im Lesebereich der Antenne befindet. Weiter konnte eruiert werden, dass die Antenne in horizontaler Ausrichtung mehr Tags auslesen kann, als in vertikaler Ausrichtung (siehe Abbildung \ref{fig:AusrichtungAntenne}).
+Weiter wurde mit verschiedenen Antennenpositionen experimentiert, unter anderem bei der Position der Waage und in der Eckpartie (siehe Abbildung \ref{fig:PlanEckpartie}). Es konnte ermittelt werden, dass das Auslesen bei der Eckpartie besser funktioniert, als dies bei der Waage der Fall ist, da sich der Behälter länger im Lesebereich der Antenne befindet. Weiter konnte eruiert werden, dass die Antenne in horizontaler Ausrichtung mehr Tags auslesen kann, als in vertikaler Ausrichtung (siehe Abbildung \ref{fig:AusrichtungAntenne}).
 
 \begin{figure}[htb]
 	\centering
@@ -151,7 +151,7 @@ Weiter wurde mit verschiedenen Antennenpositionen experimentiert, unter anderem 
 \end{figure}
 
 \section{Test Deplatziertes Exemplar}
-Anschliessend wurde mit einem eigens mitgebrachten Tag, das Erkennen eines deplazierten Exemplars getestet. Dieser Tag wurde von der Applikation als deplatzierte Tag erkannt, sofern die Bedingung erfüllt waren um den Tag überhaupt auslesen zu können. Dies beinhaltet, dass eine gewise Distanz zu anderen Tags eingehalten wird, sowie die Ausrichtung des Tags zur Antenne den kritischen Wert von 60\SIUnitSymbolDegree nicht übersteigt. Auf der Abbildung \ref{fig:PositionenRFIDTag} wird dargestellt, bei welchen Szenarien der Test erfolgreich war und bei welchen nicht.
+Anschliessend wurde mit einem eigens mitgebrachten Tag, das Erkennen eines deplatzierten Exemplars getestet. Dieser Tag wurde von der Applikation als deplatzierte Tag erkannt, sofern die Bedingung erfüllt waren um den Tag überhaupt auslesen zu können. Dies beinhaltet, dass eine gewise Distanz zu anderen Tags eingehalten wird, sowie die Ausrichtung des Tags zur Antenne den kritischen Wert von 60\SIUnitSymbolDegree nicht übersteigt. Auf der Abbildung \ref{fig:PositionenRFIDTag} wird dargestellt, bei welchen Szenarien der Test erfolgreich war und bei welchen nicht.
 
 \begin{figure}[htb]
 	\centering
