@@ -1,0 +1,36 @@
+\documentclass[
+	a4paper
+]{scrartcl}
+
+%%% PACKAGES %%%
+
+% add unicode support and use german as language
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+% Use Helvetica as font
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+% Better enumerisation env
+\usepackage[shortlabels]{enumitem}
+
+% Symbols like checkmark
+\usepackage{amssymb}
+\usepackage{pifont}
+
+% Todolist - credit to https://tex.stackexchange.com/questions/247681/how-to-create-checkbox-todo-list
+\newlist{todolist}{itemize}{5}
+\setlist[todolist]{label=$\square$}
+
+
+%%% DOCUMENT %%%
+
+\begin{document}
+
+\chapter*{Web-Anhang Inhaltsverzeichnis}
+
+% TODO Writeup items
+
+\end{document}
