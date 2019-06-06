@@ -1,0 +1,50 @@
+\documentclass[
+	a4paper
+]{scrartcl}
+
+%%% PACKAGES %%%
+
+% add unicode support and use german as language
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+% Use Helvetica as font
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+% Better enumerisation env
+\usepackage[shortlabels]{enumitem}
+
+% Symbols like checkmark
+\usepackage{amssymb}
+\usepackage{pifont}
+
+% Todolist - credit to https://tex.stackexchange.com/questions/247681/how-to-create-checkbox-todo-list
+\newlist{todolist}{itemize}{5}
+\setlist[todolist]{label=$\square$}
+
+
+%%% DOCUMENT %%%
+
+\begin{document}
+
+\section*{Web-Anhang Inhaltsverzeichnis}
+
+\begin{enumerate}
+	\item Repository der Dokumentation
+	\item Repository der erarbeiten Artefakte
+	\item Repository der Konzepte
+	\item Repository der Machbarkeitsstudie
+	\item Repository der Referenzimplementation
+	\item Projektbeschreibung
+	\item Hyintech Datenblätter
+	\item Meetingartefakte
+	\item Im Laufe der Recherche gesammelte Dokumente
+	\item Anleitungen und Merkblätter
+	\item Versuche und deren Dokumentation
+	\item Artefakte der Bücher ID
+	\item Arbeitsjournale
+\end{enumerate}
+
+\end{document}
