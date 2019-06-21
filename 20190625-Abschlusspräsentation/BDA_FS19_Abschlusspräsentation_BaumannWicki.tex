@@ -2,6 +2,8 @@
 \usetheme{focus}
 
 \usepackage{subcaption}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
 
 \title{Bachelorarbeit\\ Abschlusspräsentation}
 \subtitle{Suche von Einzelexemplaren}
@@ -15,7 +17,6 @@
 \begin{frame}{Recap Zwischenpräsentation}
 \begin{itemize}
     \item Kunde
-    \item Aufgabenstellung und Ziele
     \item Referenzimplementation
     \item Konzepte
     \item Herausforderungen
@@ -35,5 +36,93 @@
         \includegraphics[width=0.7\linewidth]{img/Testframework}
     \end{subfigure}
 \end{figure}
+\end{frame}
+\begin{frame}{Aufgabenstellung}
+\centering
+\textquotedblleft Klärung Machbarkeit und idealerweise technische Umsetzung zur (teil-) automatischen Suche von Einzelexemplaren im Hochregallager mit RFID.\textquotedblright
+\end{frame}
+\begin{frame}{Ziele}
+Es soll mittels einer Machbarkeitsstudie und einem Proof of Concept untersucht werden, ob es technisch realisierbar ist, Exemplare, welche mit RFID Tags ausgerüstet sind, im Hochregallager der Speicherbibliothek zu finden.
+\end{frame}
+\begin{frame}{Anforderungen 1/3}
+ \begin{itemize}
+    \item \textbf{Es sollen mindestens zwei Lösungskonzepte für eine Auswahl der Machbarkeitsstudie entwickelt werden.}
+    \item Die Lösungskonzepte müssen auf deren technische Realisierbarkeit untersucht werden.
+    \item Es muss mindestens ein entwickeltes Konzept für die Machbarkeitsstudie verwendet werden.
+    \item Die Machbarkeitsstudie muss eine Kostenrechnung für die Lösungsansätze beinhalten.
+    \item Es soll eine Referenzimplementation entwickelt werden, welche vom Kunde verwendet werden kann.
+    
+    \item Anforderungen an Konzepte
+    \begin{itemize}
+        \item Die Lösungskonzepte müssen mit dem Lagersystem kommunizieren können
+        \item Die Lösungskonzepte müssen die RFID Tags in weniger als 1 Sekunden identifizieren können.
+        \item \textbf{Die Lösungskonzepte müssen für das bestehende Hochregallager der Speicherbibliothek verwendbar sein.}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Anforderungen 2/3}
+\begin{itemize}
+    \item Anforderungen an Proof of Concept
+    \begin{itemize}
+        \item Das Proof of Concept muss technisch aufzeigen, wie viele RFID Tags in einer Sekunde identifiziert werden können.
+    \end{itemize}
+    \item Anforderungen an Referenzimplementation
+    \begin{itemize}
+        \item \textbf{Die Referenzimplementation ist in der Lage die Buch ID eines Exemplares über RFID auszulesen.}
+        \item \textbf{Die Referenzimplementation soll erkennen, wenn eine Box ein Exemplar (eines, welches mit RFID ausgestattet ist und technisch auch Lesbar ist) enthält, welches nicht dieser Box zugehörig ist.}
+        \item Die Referenzimplementation soll jede erkannte Unstimmigkeit (Exemplar, welches nicht zu diesem Behälter gehört) in einem Logdokument persistieren.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Anforderungen 3/3}
+\begin{itemize}
+    \item ...
+    \begin{itemize}
+        \item Die Referenzimplementation soll in der Lage sein, dem Endbenutzer, in graphischer Form durch eine Konsolen-Ausgabe, mitzuteilen, welcher Behälter eine Unstimmigkeit enthält.
+        \item \textbf{Die Referenzimplementation soll die unter Laborbedingungen erhaltenen Resultate unter Realbedingungen verifizieren.}
+        \item \textbf{\textit{Die Referenzimplementation soll mit einer Oracle Datenbank kommunizieren können.}}
+    \end{itemize}
+ \end{itemize}
+\end{frame}
+\begin{frame}{Versuche}
+
+\end{frame}
+\begin{frame}{Erkenntnisse aus Versuchen}
+
+\end{frame}
+\begin{frame}{Machbarkeitsstudie}
+
+\end{frame}
+\begin{frame}{Erkenntnisse aus der Machbarkeitsstudie}
+
+\end{frame}
+\begin{frame}{Referenzimplementation}
+
+\end{frame}
+\begin{frame}{Test vor Ort}
+
+\end{frame}
+\begin{frame}{Erkenntnisse aus dem Test vor Ort}
+
+\end{frame}
+\begin{frame}{Projektdokumentation}
+
+\end{frame}
+\begin{frame}{Allgemeine Herausforderungen}
+
+\end{frame}
+\begin{frame}{Vergleich Anforderungen}
+
+\end{frame}
+\begin{frame}{Fazit}
+\begin{itemize}
+    \item Materialbeschaffung
+\end{itemize}
+\end{frame}
+\begin{frame}{Schluss}
+\centering
+\Large{Danke für die Aufmerksamkeit}\\
+\vspace{1em}
+\Large{Wir freuen uns auf Ihre Fragen}
 \end{frame}
 \end{document}
